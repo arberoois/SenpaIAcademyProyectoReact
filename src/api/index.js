@@ -5,11 +5,7 @@ export const subscription = (email) => {
   })
     .then((res) => res.json())
     .then((final) => {
-      if (final.code === 200) {
-        return "Gracias por susbscribirte, ID de subscripcion: " + final.id;
-      } else {
-        return final.message;
-      }
+      return final;
     });
   return post;
 };

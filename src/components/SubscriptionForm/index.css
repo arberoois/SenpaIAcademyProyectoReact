@@ -1,16 +1,16 @@
-form {
+.subscriptionForm {
 font-size: 20px;    
 }
 
-form label {
+.subscriptionForm label {
     color: var(--violeta);
 }
-header form input[type="email"] {
+header .subscriptionForm input[type="email"] {
     width: 200px;
     height: 25px;
     text-align: center;
 }
-form button {
+.subscriptionForm button {
     margin: 5px;
     width: 150px;
     padding: 3px;

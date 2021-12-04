@@ -1,0 +1,54 @@
+.register h1 {
+    color: var(--violeta);
+    text-align: center;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+}
+
+.registerForm .inputs {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.registerForm button, .registerForm a{
+    border: none;
+    color: var(--violeta);
+    background-color: var(--gris);
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 1rem;
+}
+
+.registerForm button:hover, .registerForm a:hover {
+    background-color: var(--violeta);
+    color: var(--gris);
+}
+
+.registerForm .inputs label {
+    margin: 5px;
+    color: var(--violeta);
+    font-weight: bold;
+}
+
+.registerForm .inputs input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--gris);
+    font-size: 14px;
+}

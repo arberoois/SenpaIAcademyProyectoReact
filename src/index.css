@@ -15,3 +15,8 @@ body {
   font-family: var(--fuente);
   height: 100vh;
 }
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}

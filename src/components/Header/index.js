@@ -11,10 +11,18 @@ const Index = () => {
       </Link>
       <nav>
         <ul>
-          <li>Inicio</li>
-          <li>Nosotros</li>
-          <li>Profesores</li>
-          <li>Contacto</li>
+          <li>
+            <Link to="/">Inicio </Link>
+          </li>
+          <li>
+            <Link to="/">Nosotros </Link>
+          </li>
+          <li>
+            <Link to="/">Profesores </Link>
+          </li>
+          <li>
+            <Link to="/">Contacto </Link>
+          </li>
           <li>
             <Link to="/login"> Login </Link>
           </li>

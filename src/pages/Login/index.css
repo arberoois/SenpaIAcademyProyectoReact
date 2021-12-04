@@ -1,0 +1,54 @@
+.login h1 {
+    text-align: center;
+    color: var(--violeta);
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+}
+
+.loginForm .inputs {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.loginForm button, .login a{
+    border: none;
+    color: var(--violeta);
+    background-color: var(--gris);
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 1rem;
+}
+
+.loginForm button:hover, .login a:hover {
+    background-color: var(--violeta);
+    color: var(--gris);
+}
+
+.loginForm .inputs label {
+    margin: 5px;
+    color: var(--violeta);
+    font-weight: bold;
+}
+
+.loginForm .inputs input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--gris);
+    font-size: 14px;
+}

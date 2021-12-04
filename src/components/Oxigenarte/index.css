@@ -1,0 +1,13 @@
+.oxigenarte {
+    text-align: center;
+}
+
+.oxigenarte h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: var(--violeta);
+}
+
+.oxigenarte p {
+    font-size: 20px;
+}
