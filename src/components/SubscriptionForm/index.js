@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { validateEmail } from "../../helpers/index";
-import { subscription } from "../../api/index";
+import { subscription } from "../../api/subscripciones";
 import "./index.css";
 import toast, { Toaster } from "react-hot-toast";
 const Index = () => {

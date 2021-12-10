@@ -9,6 +9,7 @@ header .subscriptionForm input[type="email"] {
     width: 200px;
     height: 25px;
     text-align: center;
+    outline: none;
 }
 .subscriptionForm button {
     margin: 5px;

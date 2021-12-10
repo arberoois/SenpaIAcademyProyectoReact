@@ -23,9 +23,15 @@ const Index = () => {
           <li>
             <Link to="/">Contacto </Link>
           </li>
-          <li>
-            <Link to="/login"> Login </Link>
-          </li>
+          {localStorage.getItem("token") ? (
+            <li>
+              <Link to="/create">Crear Profesor</Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login"> Login </Link>
+            </li>
+          )}
         </ul>
       </nav>
       <div>
