@@ -1,0 +1,18 @@
+.e404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    font-size: 1.2rem;
+}
+
+.e404 p {
+    margin: 15px;
+}
+
+.e404 a {
+    text-decoration: none;
+    font-size: 20px;
+}
+

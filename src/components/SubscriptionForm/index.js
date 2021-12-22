@@ -9,12 +9,17 @@ const Index = () => {
     e.preventDefault();
     if (validateEmail(email)) {
       subscription(email).then((res) => {
-        if (res.id) {
+        console.log(res, "res");
+        if (res.code === 201) {
           toast.success(`${email} ha sido subscripto correctamente`, {
             position: "top-right",
             duration: 3000,
           });
         } else {
+          toast.error(`Ha ocurrido un error al subscribir al email: ${email}`, {
+            position: "top-right",
+            duration: 3000,
+          });
         }
       });
       setEmail("");

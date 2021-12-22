@@ -2,11 +2,11 @@ import React from "react";
 import "./index.css";
 import Oxigenarte from "../../components/Oxigenarte";
 import Profesores from "../../components/Profesores";
-const Index = () => {
+const Index = ({ profesores, setProfesores }) => {
   return (
     <div className="home">
       <Oxigenarte />
-      <Profesores />
+      <Profesores profesores={profesores} setProfesores={setProfesores} />
     </div>
   );
 };

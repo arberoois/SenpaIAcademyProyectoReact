@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./index.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { validateEmail } from "../../helpers";
+import { register } from "../../api/auth";
 
 const Index = () => {
+  const naviagate = useNavigate();
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
@@ -36,7 +38,33 @@ const Index = () => {
           },
         });
       } else {
-        // api call
+        register(newUser).then((res) => {
+          if (res.code !== 201) {
+            toast.error(res.message, {
+              position: "top-right",
+              duration: 3000,
+              style: {
+                background: "#000",
+                color: "#fff",
+              },
+            });
+            setNewUser({
+              name: "",
+              email: "",
+              password: "",
+            });
+          } else {
+            toast.success("Usuario creado exitosamente", {
+              position: "top-right",
+              duration: 3000,
+              style: {
+                background: "#000",
+                color: "#fff",
+              },
+            });
+            naviagate("/login");
+          }
+        });
       }
     }
   };

@@ -24,3 +24,11 @@ header nav ul li:hover {
 header nav ul li a {
     text-decoration: none;
 }
+
+header nav ul li button {
+    border: none;
+    background-color: transparent;
+    color: var(--violeta);
+    font-size: 20px;
+    cursor: pointer;
+}

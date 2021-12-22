@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./index.css";
 import toast from "react-hot-toast";
+import { create } from "../../api/profesores";
+import { useNavigate } from "react-router-dom";
 const Index = () => {
+  const navigate = useNavigate();
+
   const [newTeacher, setNewTeacher] = useState({
     name: "",
     descripcion: "",
@@ -11,7 +15,6 @@ const Index = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(newTeacher);
     if (
       newTeacher.name === "" ||
       newTeacher.descripcion === "" ||
@@ -28,6 +31,19 @@ const Index = () => {
       });
     } else {
       // call api
+      create(newTeacher).then((res) => {
+        if (res.code === 201) {
+          toast.success(res.message, {
+            position: "top-right",
+            duration: 3000,
+            style: {
+              color: "white",
+              backgroundColor: "black",
+            },
+          });
+          navigate("/");
+        }
+      });
     }
   };
 

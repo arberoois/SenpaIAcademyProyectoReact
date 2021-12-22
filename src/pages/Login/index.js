@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./index.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { validateEmail } from "../../helpers";
+import { login } from "../../api/auth";
 const Index = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -11,7 +13,6 @@ const Index = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
     if (user.email === "" || user.password === "") {
       toast.error("Debe llenar todos los campos", {
         position: "top-right",
@@ -32,9 +33,31 @@ const Index = () => {
           },
         });
       } else {
-        // api call
+        login(user).then((res) => {
+          if (res.code !== 200) {
+            toast.error(res.message, {
+              position: "top-right",
+              duration: 3000,
+              style: {
+                background: "#000",
+                color: "#fff",
+              },
+            });
+            setUser({ email: "", password: "" });
+          } else {
+            localStorage.setItem("token", res.token);
+            toast.success("Bienvenido", {
+              position: "top-right",
+              duration: 3000,
+              style: {
+                background: "#000",
+                color: "#fff",
+              },
+            });
+            navigate("/");
+          }
+        });
       }
-      // api call
     }
   };
   return (

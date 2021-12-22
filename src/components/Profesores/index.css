@@ -1,0 +1,12 @@
+.profesores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1/4;
+    text-align: center;
+}
+
+.h1p {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--violeta);
+}
