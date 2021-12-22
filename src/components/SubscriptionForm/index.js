@@ -9,7 +9,6 @@ const Index = () => {
     e.preventDefault();
     if (validateEmail(email)) {
       subscription(email).then((res) => {
-        console.log(res, "res");
         if (res.code === 201) {
           toast.success(`${email} ha sido subscripto correctamente`, {
             position: "top-right",
