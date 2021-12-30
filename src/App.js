@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
@@ -8,6 +8,14 @@ import Create from "./pages/Create";
 import E404 from "./pages/404";
 function App() {
   const [profesores, setProfesores] = useState([]);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setUser(true);
+    }
+  }, []);
 
   return (
     <>
@@ -20,7 +28,7 @@ function App() {
               <Home profesores={profesores} setProfesores={setProfesores} />
             }
           ></Route>
-          {localStorage.getItem("token") ? (
+          {user ? (
             <>
               <Route path="/create" element={<Create />}></Route>
             </>
